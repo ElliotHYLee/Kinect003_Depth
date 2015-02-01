@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kinect003_Depth.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,38 @@ namespace Kinect003_Depth
     /// </summary>
     public partial class MainWindow : Window
     {
+        myKinect _kinect;
         public MainWindow()
         {
             InitializeComponent();
+            _kinect = new myKinect(this);
+            
+        }
+
+        private void btnConnect_Click(object sender, RoutedEventArgs e)
+        {
+            if (this._kinect.status())
+            {
+                this._kinect.disconnect();
+                Console.WriteLine("disconnect");
+                this.btnConnect.Content = "Connect";
+            }
+            else
+            {
+                this._kinect.connect();
+                Console.WriteLine("connect");
+                this.btnConnect.Content = "Disconnect";
+            }
+            
+        }
+
+        private void btnCloseApp_Click(object sender, RoutedEventArgs e)
+        {
+            if (this._kinect.status())
+            {
+                this._kinect.disconnect();
+                this.Close();
+            }
         }
     }
 }

@@ -1,1 +1,13 @@
 C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\bin\Debug\Kinect003_Depth.exe.config
+C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\bin\Debug\Kinect003_Depth.exe
+C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\bin\Debug\Kinect003_Depth.pdb
+C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\Kinect003_Depth.csprojResolveAssemblyReference.cache
+C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\MainWindow.baml
+C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\MainWindow.g.cs
+C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\App.g.cs
+C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\Kinect003_Depth_MarkupCompile.cache
+C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\Kinect003_Depth.g.resources
+C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\Kinect003_Depth.Properties.Resources.resources
+C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\Kinect003_Depth.csproj.GenerateResource.Cache
+C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\Kinect003_Depth.exe
+C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\Kinect003_Depth.pdb
