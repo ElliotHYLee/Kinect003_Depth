@@ -4,15 +4,15 @@
 exe
 C#
 .cs
-D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\
 Kinect003_Depth
 none
 false
-DEBUG;TRACE
+TRACE
 D:\GitHub\Kinect003_Depth\Kinect003_Depth\App.xaml
 11151548125
 
-10-1547867330
+10-657384815
 13-618838050
 MainWindow.xaml;
 

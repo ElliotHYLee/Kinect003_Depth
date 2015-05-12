@@ -1,12 +1,14 @@
 ﻿<Window x:Class="Kinect003_Depth.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="606.099" Width="870.123">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="547" Margin="153,10,0,0" VerticalAlignment="Top" Width="687">
-            <Image Name="ColorImageElement" HorizontalAlignment="Left" Height="517" Margin="9,9,0,0" VerticalAlignment="Top" Width="667"/>
-        </Border>
         <Button Name="btnConnect" Content="Connect" HorizontalAlignment="Left" VerticalAlignment="Top" Width="114" Margin="10,20,0,0" Height="24" Click="btnConnect_Click"/>
         <Button Name="btnCloseApp" Content="Close Window" HorizontalAlignment="Left" VerticalAlignment="Top" Width="114" Margin="10,63,0,0" Height="22" Click="btnCloseApp_Click"/>
+        
+            <TextBlock x:Name="PixelDepth" HorizontalAlignment="Left" Height="59" TextWrapping="Wrap" Text="" Width="681" Margin="111,-1,0,511"/>
+            <Image x:Name="DepthImage" HorizontalAlignment="Left" Height="480" Width="640" Margin="142,58,0,31"/>
+        
+
     </Grid>
 </Window>

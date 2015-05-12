@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -15,16 +16,21 @@ namespace Kinect003_Depth.Controller
     {
         #region Member Variables
         private KinectSensor _Kinect;
-        private WriteableBitmap _ColorImageBitmap;
-        private Int32Rect _ColorImageBitmapRect;
-        private int _ColorImageStride;
+        //private WriteableBitmap _ColorImageBitmap;
+        //private Int32Rect _ColorImageBitmapRect;
+        //private int _ColorImageStride;
         private MainWindow _main;
+        private short[] _DepthImagePixelData;
+
+        private DepthImageFrame _lastDepthFrame;
+
         #endregion Member Variables
 
 
         public myKinect(MainWindow x)
         {
             this._main = x;
+            this._main.DepthImage.MouseLeftButtonUp +=DepthImage_MouseLeftButtonUp;
         }
 
         public void connect()
@@ -67,23 +73,6 @@ namespace Kinect003_Depth.Controller
 
 
         }
-
-        private void depthFrameReady(object sender, DepthImageFrameReadyEventArgs e)
-        {
-            using (DepthImageFrame frame = e.OpenDepthImageFrame())
-            {
-                if (frame != null)
-                {
-                    short[] pixelData = new short[frame.PixelDataLength];
-                    frame.CopyPixelDataTo(pixelData);
-                    int stride = frame.Width * frame.BytesPerPixel;
-                    this._main.ColorImageElement.Source = BitmapSource.Create(frame.Width, frame.Height, 96, 96, PixelFormats.Gray16, null, pixelData, stride);
-                }
-            }
-        }
-
-
-
 
         private void KinectSensors_StatusChanged(object sender, StatusChangedEventArgs e)
         {
@@ -151,7 +140,7 @@ namespace Kinect003_Depth.Controller
         {
             if (sensor != null)
             {
-                sensor.Stop(); //dont know why but somehow the sensor has not stopped during uninitialization
+                sensor.Stop();//dont know why but somehow the sensor has not stopped during uninitialization
                 //ColorImageStream colorStream = sensor.ColorStream;
                 //sensor.ColorStream.Enable();
 
@@ -162,15 +151,54 @@ namespace Kinect003_Depth.Controller
 
                 //sensor.ColorFrameReady += Kinect_ColorFrameReady;
 
-
                 this.Kinect.DepthStream.Enable();
+                //this.Kinect.DepthFrameReady += depthFrameReady;
                 this.Kinect.DepthFrameReady += depthFrameReady;
-
 
                 sensor.Start();
 
             }
         }
+
+        private void depthFrameReady(object sender, DepthImageFrameReadyEventArgs e)
+        {
+            if (this._lastDepthFrame != null)
+            {
+                this._lastDepthFrame.Dispose();
+                this._lastDepthFrame = null;
+            }
+            
+            this._lastDepthFrame = e.OpenDepthImageFrame();
+
+            if (this._lastDepthFrame != null)
+            {
+                this._DepthImagePixelData = new short[this._lastDepthFrame.PixelDataLength];
+                this._lastDepthFrame.CopyPixelDataTo(_DepthImagePixelData);
+                int stride = this._lastDepthFrame.Width * this._lastDepthFrame.BytesPerPixel;
+                this._main.DepthImage.Source = BitmapSource.Create(this._lastDepthFrame.Width, this._lastDepthFrame.Height, 96, 96, PixelFormats.Gray16, null, this._DepthImagePixelData, stride);
+            }
+        }
+
+        private void DepthImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            //Console.WriteLine("Im here");
+            Point p = e.GetPosition(this._main.DepthImage);
+
+            if (this._DepthImagePixelData != null && this._DepthImagePixelData.Length > 0)
+            {
+                //Console.WriteLine("Im here2");
+                int pixelIndex = (int)(p.X + ((int)p.Y * this._lastDepthFrame.Width));
+                int depth = this._DepthImagePixelData[pixelIndex] >> DepthImageFrame.PlayerIndexBitmaskWidth;
+                int depthInches = (int)(depth * 0.0393700787);
+                int depthFt = depthInches / 12;
+                depthInches = depthInches % 12;
+
+                this._main.PixelDepth.Text = depth + " [mm] " + depthFt + "' " + depthInches + " \"";
+                    //string.Format("{0]mm~ {1}'{2}\"", depth, depthFt, depthInches);
+            }
+
+        }
+
 
         private void UninitializeKinectSensor(KinectSensor sensor)
         {
@@ -182,20 +210,20 @@ namespace Kinect003_Depth.Controller
             }
         }
 
-        private void Kinect_ColorFrameReady(object sender, ColorImageFrameReadyEventArgs e)
-        {
-            using (ColorImageFrame frame = e.OpenColorImageFrame())
-            {
-                if (frame != null)
-                {
-                    byte[] pixelData = new byte[frame.PixelDataLength];
-                    frame.CopyPixelDataTo(pixelData);
+        //private void Kinect_ColorFrameReady(object sender, ColorImageFrameReadyEventArgs e)
+        //{
+        //    using (ColorImageFrame frame = e.OpenColorImageFrame())
+        //    {
+        //        if (frame != null)
+        //        {
+        //            byte[] pixelData = new byte[frame.PixelDataLength];
+        //            frame.CopyPixelDataTo(pixelData);
 
-                    this._main.ColorImageElement.Source = BitmapImage.Create(frame.Width, frame.Height, 96, 96, PixelFormats.Bgr32, null, pixelData, frame.Width * frame.BytesPerPixel);
-                    //this._ColorImageBitmap.WritePixels(this._ColorImageBitmapRect, pixelData, this._ColorImageStride, 0);
-                }
-            }
-        }
+        //            this._main.ColorImageElement.Source = BitmapImage.Create(frame.Width, frame.Height, 96, 96, PixelFormats.Bgr32, null, pixelData, frame.Width * frame.BytesPerPixel);
+        //            //this._ColorImageBitmap.WritePixels(this._ColorImageBitmapRect, pixelData, this._ColorImageStride, 0);
+        //        }
+        //    }
+        //}
 
     }
 }

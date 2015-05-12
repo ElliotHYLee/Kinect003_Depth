@@ -11,3 +11,6 @@ C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\Kinec
 C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\Kinect003_Depth.csproj.GenerateResource.Cache
 C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\Kinect003_Depth.exe
 C:\Users\Elliot\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\Kinect003_Depth.pdb
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\bin\Debug\Kinect003_Depth.exe.config
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\Kinect003_Depth.exe
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\Kinect003_Depth.pdb
