@@ -1,0 +1,13 @@
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\bin\Release\Kinect003_Depth.exe.config
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\bin\Release\Kinect003_Depth.exe
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\bin\Release\Kinect003_Depth.pdb
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\Kinect003_Depth.csprojResolveAssemblyReference.cache
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\MainWindow.baml
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\MainWindow.g.cs
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\App.g.cs
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\Kinect003_Depth_MarkupCompile.cache
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\Kinect003_Depth.g.resources
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\Kinect003_Depth.Properties.Resources.resources
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\Kinect003_Depth.csproj.GenerateResource.Cache
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\Kinect003_Depth.exe
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\Kinect003_Depth.pdb

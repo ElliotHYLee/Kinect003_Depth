@@ -4,12 +4,20 @@
 exe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\Hongyun\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\
+=======
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Debug\
+>>>>>>> origin/master
 Kinect003_Depth
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Hongyun\Documents\GitHub\Kinect003_Depth\Kinect003_Depth\App.xaml
+=======
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\App.xaml
+>>>>>>> origin/master
 11151548125
 
 10-90741922
