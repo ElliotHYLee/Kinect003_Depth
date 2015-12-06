@@ -11,3 +11,5 @@ D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\Kinect003_Depth.Properties
 D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\Kinect003_Depth.csproj.GenerateResource.Cache
 D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\Kinect003_Depth.exe
 D:\GitHub\Kinect003_Depth\Kinect003_Depth\obj\Release\Kinect003_Depth.pdb
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\bin\Release\Microsoft.Kinect.dll
+D:\GitHub\Kinect003_Depth\Kinect003_Depth\bin\Release\Microsoft.Kinect.xml
